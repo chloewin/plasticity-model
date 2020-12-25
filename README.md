@@ -11,8 +11,11 @@ There are several forms of short-term synaptic plasticity. One is synaptic facil
 
 ---
 
-These files describe a model for synaptic facilitation and depression based on the above mechanisms using equations derived from [1]. Euler's method was used for all differentials.
-- Calcium buffering: calcium is constantly being removed from the cell following this differential equation: $\tau_{Ca}\frac{dCa}{dt}$
+**Model SetUp**
+These files describe a model for synaptic facilitation and depression based on the above mechanisms using equations derived from [1]. Euler's method was used for all differentials. THe following are the mechanisms that are modeled over time.
+- Calcium buffering: calcium (``Ca``) is constantly being removed from the cell following exponential decay with a certain time constant and a starting calcium concentration as well as a constant influx modeled by a rate.
+- Vesicle release: vesicle release probability (``prel``) depends on calcium concentration. This was modeled as either a sigmoid function of calcium concentration or using the Hill equation (this was harder to optimize.)
+- Releasable vesicles: the ratio of vesicles that are releasable (``rrel``) is modeled as an exponential decay.
 
 ---
 
