@@ -13,7 +13,7 @@ There are several forms of short-term synaptic plasticity. One is synaptic facil
 
 ---
 
-**Model SetUp**
+**Model Description**
 
 These files describe and explore a model for simultaneous synaptic facilitation and depression based on the above mechanisms using equations derived from [1]. The following are the mechanisms that are modeled over time.
 - Calcium buffering: calcium (``Ca``) is constantly being removed from the cell following exponential decay with a certain time constant and a starting calcium concentration as well as a constant influx modeled by a rate.
@@ -24,6 +24,7 @@ These files describe and explore a model for simultaneous synaptic facilitation 
 ---
 
 **Files**
+
 ***Code Files***
 - ``plasticity_control.m``: This code explores the data collected under control conditions for each stimulation frequency. Variables listed can be changed to explore the model's fit of the collected data. The postsynaptic voltage predicted by the model and collected in the experiments are plotted against each other. Additionally, for the sake of exploration, the probability of release, ratio of readily releasable vesicles, and calcium concentration predicted by the simulation are plotted over time for each stimulation frequency. The documentation for this code walks through the equations used for the simulation. A reading of [1] may also help.
 - ``fit_psp_amps.m``: This is my initial attempt at using MATLAB's fmincon function to fit the parameters of the synaptic plasticity model to the experimental data.
@@ -46,6 +47,7 @@ These files describe and explore a model for simultaneous synaptic facilitation 
 ---
 
 **Future Work**
+
 Future work includes exploring other models for synaptic facilitation and depression, exploring mixed plasticity in other data (e.g., data collected by the Allen Brain Institute), and developing a method to fit this model to experimental data.
 
 ---
