@@ -1,17 +1,20 @@
 # plasticity-model
 model for synaptic facilitation, depression
 
+I created a mechanistic model for synaptic facilitation and synaptic depression inspired by equations described in [1]. I then compared simulations based on these models to experimentally collected data. The data included here was collected as part of Neusci 301 (Introduction to Cellular and Molecular Neuroscience) at the University of Washington. In these experiments, synaptic transmission was studied at the crayfish superficial flexor muscles and associated innervation. In this model, we recorded from presynaptic cells in a nerve and postsynaptic cells in the muscle. We were able to stimulate the nerve at various frequencies, enabling us to study the effects of high frequency stimulation on synaptic strength and hence synaptic plasticity. Several of our experimental files are included here. Also included are the same experiments when the muscle was exposed to caffeine, and this data can be used to study synaptic plasticity under caffeine exposure.
+
 ---
 
 **Background**
 
 Communication in the brain takes place at synapses, tiny gaps between neurons. In these synapses, neurotransmitters are released from _presynaptic_ terminals to _postsynaptic_ structures in _vesicles_ (packets). Neurotransmitters mediate electric responses in the postsynaptic neuron. Synaptic activity often leads to changes in synaptic strength (how successful the presynaptic cell is at causing an electric response in the postsynaptic cell.) This phenomenon is known as synaptic plasticity. Synaptic plasticity can be either longterm or shortterm.
 
-There are several forms of short-term synaptic plasticity. One is synaptic facilitation, the strengthening of a synapse. One proposed mechanism for this is buildup of calcium in the presynaptic cell [1]. Synaptic depression, another form of short-term plasticity, refers to the weakening of a synapse. One proposed mechanism of this is the depletion of vesicles [1].
+There are several forms of short-term synaptic plasticity. One is synaptic facilitation, the strengthening of a synapse. One proposed mechanism for this is buildup of calcium in the presynaptic cell [1]. Synaptic depression, another form of short-term plasticity, refers to the weakening of a synapse. One proposed mechanism of this is the depletion of vesicles [1]. These phenomena can occur simultaneously and is then referred to as mixed plasticity.
 
 ---
 
 **Model SetUp**
+
 These files describe a model for synaptic facilitation and depression based on the above mechanisms using equations derived from [1]. Euler's method was used. The following are the mechanisms that are modeled over time.
 - Calcium buffering: calcium (``Ca``) is constantly being removed from the cell following exponential decay with a certain time constant and a starting calcium concentration as well as a constant influx modeled by a rate.
 - Vesicle release: vesicle release probability (``prel``) depends on calcium concentration. This was modeled as either a sigmoid function of calcium concentration or using the Hill equation (this was harder to optimize.)
@@ -21,7 +24,17 @@ These files describe a model for synaptic facilitation and depression based on t
 ---
 
 **Files**
-- ``plasticity_control.m``: This code explores the data collected under control conditions for each stimulation frequency. Variables listed can be changed to explore the model's fit of the collected data. The postsynaptic voltage predicted by the model and collected in the experiments are plotted against each other. Additionally, for the sake of exploration, the probability of release, ratio of readily releasable vesicles, and calcium concentration predicted by the simulation are plotted over time for each stimulation frequency.
+- ``plasticity_control.m``: This code explores the data collected under control conditions for each stimulation frequency. Variables listed can be changed to explore the model's fit of the collected data. The postsynaptic voltage predicted by the model and collected in the experiments are plotted against each other. Additionally, for the sake of exploration, the probability of release, ratio of readily releasable vesicles, and calcium concentration predicted by the simulation are plotted over time for each stimulation frequency. The documentation for this code walks through the equations used for the simulation. A reading of [1] may also help.
+- ``fit_psp_amps.m``: This is my initial attempt at using MATLAB's fmincon function to fit the parameters of the synaptic plasticity model to the experimental data.
+- ``generate_pastic_voltage.m``: This function can be used to simulate the postsynaptic voltage produced given synaptic plasticity parameters.
+- ``predict_psp_amps.m``: This function can be used to simulate the amplitudes of postsynaptic potentails produced given synaptic plasticity parameters.
+- ``calc_psp_amps.m``: This general-purpose function can be used to determine the amplitudes of peaks in voltage (in this case used to determine the amplitude of postsynaptic potentials given the raw postsynaptic voltage trace.)
+- ``calc_psp_amp_cost.m``: This function defines a cost function based on the amplitudes of predicted and real postsynaptic potentials.
+-  ``calc_cost.m``: This function defines a cost function based on the predicted and real postsynaptic potentials.
+- ``calc_prel.m``: This function is used to compute release probability over time.
+
+- ``exploration_steadystate.m``: This code explores the release probability of a cell and the transmission rate as a function of stimulation frequency.
+- `` exploration_dynamic_response.m``: This code explores the release probability of a cell over time as the stimulation frequency changes over time.
 
 ---
 
