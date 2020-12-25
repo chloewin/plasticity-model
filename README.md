@@ -1,13 +1,15 @@
 # plasticity-model
 model for synaptic facilitation, depression
 
+I created a mechanistic model for synaptic facilitation and synaptic depression inspired by equations described in [1]. I then compared simulations based on these models to experimentally collected data. The data included here was collected as part of Neusci 301 (Introduction to Cellular and Molecular Neuroscience) at the University of Washington. In these experiments, synaptic transmission was studied at the crayfish superficial flexor muscles and associated innervation. In this model, we recorded from presynaptic cells in a nerve and postsynaptic cells in the muscle. We were able to stimulate the nerve at various frequencies, enabling us to study the effects of high frequency stimulation on synaptic strength and hence synaptic plasticity. Several of our experimental files are included here. Also included are the same experiments when the muscle was exposed to caffeine, and this data can be used to study synaptic plasticity under caffeine exposure.
+
 ---
 
 **Background**
 
 Communication in the brain takes place at synapses, tiny gaps between neurons. In these synapses, neurotransmitters are released from _presynaptic_ terminals to _postsynaptic_ structures in _vesicles_ (packets). Neurotransmitters mediate electric responses in the postsynaptic neuron. Synaptic activity often leads to changes in synaptic strength (how successful the presynaptic cell is at causing an electric response in the postsynaptic cell.) This phenomenon is known as synaptic plasticity. Synaptic plasticity can be either longterm or shortterm.
 
-There are several forms of short-term synaptic plasticity. One is synaptic facilitation, the strengthening of a synapse. One proposed mechanism for this is buildup of calcium in the presynaptic cell [1]. Synaptic depression, another form of short-term plasticity, refers to the weakening of a synapse. One proposed mechanism of this is the depletion of vesicles [1].
+There are several forms of short-term synaptic plasticity. One is synaptic facilitation, the strengthening of a synapse. One proposed mechanism for this is buildup of calcium in the presynaptic cell [1]. Synaptic depression, another form of short-term plasticity, refers to the weakening of a synapse. One proposed mechanism of this is the depletion of vesicles [1]. These phenomena can occur simultaneously and is then referred to as mixed plasticity.
 
 ---
 
