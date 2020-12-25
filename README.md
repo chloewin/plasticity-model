@@ -11,11 +11,8 @@ There are several forms of short-term synaptic plasticity. One is synaptic facil
 
 ---
 
-
-
-A kinetic model unifying presynaptic short-term facilitation
-and depression
-
+These files describe a model for synaptic facilitation and depression based on the above mechanisms using equations derived from [1]. Euler's method was used for all differentials.
+- Calcium buffering: calcium is constantly being removed from the cell following this differential equation: $\tau_{Ca}\frac{dCa}{dt}$
 
 ---
 
