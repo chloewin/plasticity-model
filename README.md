@@ -21,7 +21,10 @@ These files describe a model for synaptic facilitation and depression based on t
 ---
 
 **Files**
-- ``plasticity_control.m``: This code explores the data collected under control conditions for each stimulation frequency. Variables listed can be changed to explore the model's fit of the collected data. The postsynaptic voltage predicted by the model and collected in the experiments are plotted against each other. Additionally, for the sake of exploration, the probability of release, ratio of readily releasable vesicles, and calcium concentration predicted by the simulation are plotted over time for each stimulation frequency.
+- ``plasticity_control.m``: This code explores the data collected under control conditions for each stimulation frequency. Variables listed can be changed to explore the model's fit of the collected data. The postsynaptic voltage predicted by the model and collected in the experiments are plotted against each other. Additionally, for the sake of exploration, the probability of release, ratio of readily releasable vesicles, and calcium concentration predicted by the simulation are plotted over time for each stimulation frequency. The documentation for this code walks through the equations used for the simulation. A reading of [1] may also help.
+- ``generate_pastic_voltage.m``: This function can be used to simulate the postsynaptic voltage produced given synaptic plasticity parameters.
+- ``exploration_steadystate.m``: This code explores the release probability of a cell and the transmission rate as a function of stimulation frequency.
+- `` exploration_dynamic_response.m``: This code explores the release probability of a cell over time as the stimulation frequency changes over time.
 
 ---
 
